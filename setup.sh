@@ -3,9 +3,7 @@
 echo "Setting up a new mac book"
 
 DOTFILES_DIR=$HOME/.dotfiles
-WORK_CODE_DIR=$HOME/Work/Code
-CODE_DIR=$HOME/Code
-NVM_DIR=$HOME/.nvm
+CODE_DIR=$HOME/OneDrive/Code
 
 # Check if xcode-select —-install is installed
 
@@ -52,19 +50,13 @@ PACKAGES=(
   gnupg
   grep
   git
-  java
   jq
   kubectl
   kubectx
-  nuget
-  nvm
-  python
   python3
-  python@3.9
   tree
   vim
   wget
-  yarn
   zsh
   zsh-completions
   zsh-syntax-highlighting
@@ -81,19 +73,10 @@ done
 # Install MacOs Applications
 APPLICATIONS=(
   adobe-acrobat-reader
-  dbeaver-community
-  docker
-  dotnet-sdk
   github
   google-chrome
   iterm2
-  microsoft-azure-storage-explorer
-  pgadmin4
   postman
-  rider
-  sourcetree
-  sublime-text
-  visual-studio-code
 )
 
 for application in "${APPLICATIONS[@]}"
@@ -106,9 +89,7 @@ brew cleanup
 
 echo "Hombrew installation complete"
 
-mkdir -p $WORK_CODE_DIR # Work Code
 mkdir -p $CODE_DIR # Personal Code
-mkdir $NVM_DIR #nvm dir
 
 
 echo "Setting up dotfiles"
@@ -121,7 +102,7 @@ then
   cd $HOME
 else
   echo "Dotfiles does not exists, installing"
-  git clone https://github.com/ygnr/dotfiles.git $DOTFILES_DIR
+  git clone https://github.com/sandy-wang/dotfiles.git $DOTFILES_DIR
 fi
 
 cd $DOTFILES_DIR
@@ -137,9 +118,9 @@ then
 else
   echo "Mac setup does not exists, installing"
   cd $CODE_DIR
-  git clone https://github.com/ygnr/mac-setup.git
+  git clone https://github.com/sandy-wang/mac-setup.git
   cd mac-setup
   echo "Change to ssh"
-  git remote set-url origin git@github.com:ygnr/mac-setup.git
+  git remote set-url origin git@github.com:sandywangkpmg/mac-setup.git
   cd $HOME
 fi
