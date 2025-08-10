@@ -121,6 +121,6 @@ else
   git clone https://github.com/sandy-wang/mac-setup.git
   cd mac-setup
   echo "Change to ssh"
-  git remote set-url origin git@github.com:sandywangkpmg/mac-setup.git
+  git remote set-url origin git@github.com:sandy-wang/mac-setup.git
   cd $HOME
 fi
